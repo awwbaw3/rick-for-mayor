@@ -2,6 +2,11 @@
 
 All notable changes to the **Rick Albaugh for Mayor (`rick-for-mayor`)** project will be documented in this file.
 
+## [1.2.0] - 2026-10-25
+### Added
+- Deployed production static assets and Cloudflare Edge custom domain triggers (`voterick4mayor.com` and `www.voterick4mayor.com`) via `wrangler.jsonc` (`account_id: 0f40130f3a5b17109c6ef2c69bc623a9`, Version ID `eff8a971-c2eb-4f11-bf5e-a5d9bf27e51a`).
+- Verified live HTTPS 200 responses on both `https://voterick4mayor.com` and `https://www.voterick4mayor.com`.
+
 ## [1.1.1] - 2026-10-25
 ### Fixed
 - Restored `https://voterick4mayor.netlify.app` as the active primary Netlify production URL (`ssl_url`) and cleared the premature unpurchased DNS zone so `voterick4mayor.com` is unlocked for purchase in the Netlify Domain Registration checkout and the live site resolves immediately.

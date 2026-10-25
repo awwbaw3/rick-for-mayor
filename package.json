@@ -1,7 +1,7 @@
 {
   "name": "rick-for-mayor",
   "private": true,
-  "version": "1.1.1",
+  "version": "1.2.0",
   "type": "module",
   "description": "Rick Albaugh for Mayor of Marshall, MI (2026) — Official Tongue-in-Cheek Campaign & Endorsement of Mayor Scott Wolfersberger",
   "scripts": {

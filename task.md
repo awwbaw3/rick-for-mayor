@@ -7,3 +7,4 @@
 - [x] Verify TypeScript and production build, push to new GitHub repository (`awwbaw3/rick-for-mayor`), and deploy standalone Netlify website.
 - [x] Crop `public/rick-crow-king.jpg` to remove top ceiling and lower legs while keeping all 3 people and the feather crown centered (`v1.0.1`).
 - [x] Bind `voterick4mayor.com` + `www.voterick4mayor.com` to Netlify site, provision Netlify DNS Zone (`6ade5b8a03ae311b3f1dc50a`), and publish `v1.1.0` production build.
+- [x] Deploy `rick-for-mayor` to Cloudflare (`0f40130f3a5b17109c6ef2c69bc623a9`) and bind `https://voterick4mayor.com` and `https://www.voterick4mayor.com` (`v1.2.0`).

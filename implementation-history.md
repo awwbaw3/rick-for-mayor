@@ -1,5 +1,9 @@
 # Implementation History
 
+## 2026-10-25 — v1.2.0 Cloudflare Edge Custom Domain Deployment (`https://voterick4mayor.com`)
+- **Cloudflare Workers Static Assets & Custom Domains**: Configured `wrangler.jsonc` (`account_id: 0f40130f3a5b17109c6ef2c69bc623a9`) with `assets.directory = "./dist"` and `custom_domain = true` routes for `voterick4mayor.com` and `www.voterick4mayor.com`.
+- **Verification**: Deployed Version ID `eff8a971-c2eb-4f11-bf5e-a5d9bf27e51a` and verified `200 OK` HTTPS responses across `https://voterick4mayor.com`, `https://www.voterick4mayor.com`, and `https://voterick4mayor.com/rick-crow-king.jpg`.
+
 ## 2026-10-25 — v1.1.1 Live Production URL Restoration (`voterick4mayor.netlify.app`)
 - **Root Cause**: Binding `custom_domain = "voterick4mayor.com"` via the Netlify API before `voterick4mayor.com` was purchased caused the Netlify Dashboard's primary site link (`ssl_url`) to point to the unregistered `https://voterick4mayor.com` (`NXDOMAIN`) and blocked the Netlify "Buy a new domain" wizard from registering `voterick4mayor.com`.
 - **Resolution**: Restored `https://voterick4mayor.netlify.app` as the active primary URL on Netlify (`62d883b8-f09c-4990-945f-674b797df48c`), cleared the premature DNS zone so `voterick4mayor.com` can be registered cleanly in the UI, and pointed `og:image` in `index.html` to `https://voterick4mayor.netlify.app/rick-crow-king.jpg`.
