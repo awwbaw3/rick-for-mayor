@@ -2,6 +2,11 @@
 
 All notable changes to the **Rick Albaugh for Mayor (`rick-for-mayor`)** project will be documented in this file.
 
+## [1.0.1] - 2026-10-25
+### Changed
+- Cropped `public/rick-crow-king.jpg` (`439x585`, 3:4 portrait aspect ratio) to remove excess top ceiling space and lower legs while keeping all three subjects and the full feather crown centered.
+- Updated hero portrait `<img>` dimensions and responsive framing in `src/App.tsx` so the full width of the cropped portrait renders without side clipping.
+
 ## [1.0.0] - 2026-10-25
 ### Added
 - Initial launch of the standalone satirical 2026 Marshall Mayoral campaign website (`D:\p\rick-for-mayor`).

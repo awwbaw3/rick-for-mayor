@@ -1,5 +1,9 @@
 # Implementation History
 
+## 2026-10-25 — v1.0.1 Main Campaign Photo Crop & Aspect Ratio Refinement
+- **Photo Crop**: Cropped `public/rick-crow-king.jpg` from `439x1024` (`Y=195..780`, resulting in `439x585`) to eliminate dead ceiling space at the top and lower legs/shoes at the bottom while preserving the full feather crown halo and all three people centered.
+- **Hero Rendering**: Updated `src/App.tsx` hero `<img>` intrinsic dimensions (`width="439" height="585"`) and changed fixed height cropping to `w-full h-auto object-cover object-center block` so neither person on the sides is clipped across viewports.
+
 ## 2026-10-25 — v1.0.0 Initial Standalone Campaign Site Launch
 - **Scope**: Created completely isolated local repository (`D:\p\rick-for-mayor`), GitHub repository (`awwbaw3/rick-for-mayor`), and standalone Netlify deployment for Rick Albaugh's satirical 2026 Marshall Mayoral campaign against Ryan Watson in support of incumbent Mayor Scott Wolfersberger.
 - **Domain Research**: Verified via Verisign RDAP and DNS resolution that `votescott4mayor.com` is active for Mayor Scott Wolfersberger, while `voterick4mayor.com`, `albaughformayor.com`, `rickformarshall.com`, and `crowkingformayor.com` are available to register.

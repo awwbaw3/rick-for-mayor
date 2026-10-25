@@ -300,9 +300,9 @@ export default function App() {
                       src="/rick-crow-king.jpg"
                       alt="Rick Albaugh wearing a black feather crown headband and feather mantle with open blazer and leggings, flanked by his feathered campaign cabinet"
                       fetchPriority="high"
-                      width="720"
-                      height="1280"
-                      className="w-full h-[540px] sm:h-[620px] object-cover object-top"
+                      width="439"
+                      height="585"
+                      className="w-full h-auto object-cover object-center block"
                     />
 
                     <figcaption className="p-4 bg-gradient-to-t from-slate-950 via-slate-950/95 to-slate-900/90 border-t border-slate-800 space-y-2">

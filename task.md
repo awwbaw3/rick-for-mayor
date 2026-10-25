@@ -5,3 +5,4 @@
 - [x] Integrate uploaded Crow King portrait (`public/rick-crow-king.jpg`) with `fetchpriority="high"`.
 - [x] Build satirical Good / Better / Best campaign platform, Copper A.C. Demerit Slip #212309 exhibit modal, Fountain Circle Ping Test (`8.8.8.8`), and Banned Buzzword Filter.
 - [x] Verify TypeScript and production build, push to new GitHub repository (`awwbaw3/rick-for-mayor`), and deploy standalone Netlify website.
+- [x] Crop `public/rick-crow-king.jpg` to remove top ceiling and lower legs while keeping all 3 people and the feather crown centered (`v1.0.1`).
