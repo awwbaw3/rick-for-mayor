@@ -1,5 +1,9 @@
 # Implementation History
 
+## 2026-10-25 — v1.1.1 Live Production URL Restoration (`voterick4mayor.netlify.app`)
+- **Root Cause**: Binding `custom_domain = "voterick4mayor.com"` via the Netlify API before `voterick4mayor.com` was purchased caused the Netlify Dashboard's primary site link (`ssl_url`) to point to the unregistered `https://voterick4mayor.com` (`NXDOMAIN`) and blocked the Netlify "Buy a new domain" wizard from registering `voterick4mayor.com`.
+- **Resolution**: Restored `https://voterick4mayor.netlify.app` as the active primary URL on Netlify (`62d883b8-f09c-4990-945f-674b797df48c`), cleared the premature DNS zone so `voterick4mayor.com` can be registered cleanly in the UI, and pointed `og:image` in `index.html` to `https://voterick4mayor.netlify.app/rick-crow-king.jpg`.
+
 ## 2026-10-25 — v1.1.0 Custom Domain Binding & Netlify DNS Provisioning (`voterick4mayor.com`)
 - **Netlify Custom Domain**: Bound `voterick4mayor.com` (primary) and `www.voterick4mayor.com` (domain alias) to Netlify site `62d883b8-f09c-4990-945f-674b797df48c`.
 - **Netlify DNS Zone**: Created Netlify DNS zone `6ade5b8a03ae311b3f1dc50a` for `voterick4mayor.com` (`dns1.p09.nsone.net` – `dns4.p09.nsone.net`) with `NETLIFY` records pointing apex and `www` to `voterick4mayor.netlify.app`.

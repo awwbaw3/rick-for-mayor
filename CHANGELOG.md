@@ -2,6 +2,11 @@
 
 All notable changes to the **Rick Albaugh for Mayor (`rick-for-mayor`)** project will be documented in this file.
 
+## [1.1.1] - 2026-10-25
+### Fixed
+- Restored `https://voterick4mayor.netlify.app` as the active primary Netlify production URL (`ssl_url`) and cleared the premature unpurchased DNS zone so `voterick4mayor.com` is unlocked for purchase in the Netlify Domain Registration checkout and the live site resolves immediately.
+- Updated `og:image` and `og:url` in `index.html` to `https://voterick4mayor.netlify.app` so social link previews resolve immediately.
+
 ## [1.1.0] - 2026-10-25
 ### Added
 - Pre-bound custom domain `voterick4mayor.com` and alias `www.voterick4mayor.com` to Netlify project `voterick4mayor` (`62d883b8-f09c-4990-945f-674b797df48c`).
