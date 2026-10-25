@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@layer base {
+  dialog::backdrop {
+    background-color: rgba(2, 6, 23, 0.82);
+    backdrop-filter: blur(6px);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 34s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
