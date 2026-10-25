@@ -2,6 +2,12 @@
 
 All notable changes to the **Rick Albaugh for Mayor (`rick-for-mayor`)** project will be documented in this file.
 
+## [1.1.0] - 2026-10-25
+### Added
+- Pre-bound custom domain `voterick4mayor.com` and alias `www.voterick4mayor.com` to Netlify project `voterick4mayor` (`62d883b8-f09c-4990-945f-674b797df48c`).
+- Provisioned Netlify DNS Zone (`6ade5b8a03ae311b3f1dc50a`) with `NETLIFY` routing records for both apex (`voterick4mayor.com`) and `www.voterick4mayor.com`.
+- Added canonical link and absolute OpenGraph URL metadata (`https://voterick4mayor.com`) in `index.html`.
+
 ## [1.0.1] - 2026-10-25
 ### Changed
 - Cropped `public/rick-crow-king.jpg` (`439x585`, 3:4 portrait aspect ratio) to remove excess top ceiling space and lower legs while keeping all three subjects and the full feather crown centered.

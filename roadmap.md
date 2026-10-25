@@ -6,5 +6,6 @@
 - Full endorsement pipeline directing Marshall voters to re-elect Mayor Scott Wolfersberger (`votescott4mayor.com`) on November 3, 2026.
 - Dedicated GitHub repository (`awwbaw3/rick-for-mayor`) and live Netlify production deployment.
 
-## Phase 2: Optional Custom Domain Binding
-- Bind `voterick4mayor.com` or `albaughformayor.com` via Cloudflare / Netlify DNS if custom TLD registration is desired before Election Day (Nov 3, 2026).
+## Phase 2: v1.1.0 — Custom Domain Binding (`voterick4mayor.com`) (Completed)
+- Bound `voterick4mayor.com` and `www.voterick4mayor.com` to the Netlify production project (`62d883b8-f09c-4990-945f-674b797df48c`).
+- Provisioned Netlify DNS Zone (`6ade5b8a03ae311b3f1dc50a`) and `NETLIFY` apex/www routing records.

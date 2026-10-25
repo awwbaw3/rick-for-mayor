@@ -1,5 +1,10 @@
 # Implementation History
 
+## 2026-10-25 — v1.1.0 Custom Domain Binding & Netlify DNS Provisioning (`voterick4mayor.com`)
+- **Netlify Custom Domain**: Bound `voterick4mayor.com` (primary) and `www.voterick4mayor.com` (domain alias) to Netlify site `62d883b8-f09c-4990-945f-674b797df48c`.
+- **Netlify DNS Zone**: Created Netlify DNS zone `6ade5b8a03ae311b3f1dc50a` for `voterick4mayor.com` (`dns1.p09.nsone.net` – `dns4.p09.nsone.net`) with `NETLIFY` records pointing apex and `www` to `voterick4mayor.netlify.app`.
+- **SEO & OpenGraph**: Updated `index.html` with canonical URL and absolute `og:image`/`og:url` metadata for `https://voterick4mayor.com`.
+
 ## 2026-10-25 — v1.0.1 Main Campaign Photo Crop & Aspect Ratio Refinement
 - **Photo Crop**: Cropped `public/rick-crow-king.jpg` from `439x1024` (`Y=195..780`, resulting in `439x585`) to eliminate dead ceiling space at the top and lower legs/shoes at the bottom while preserving the full feather crown halo and all three people centered.
 - **Hero Rendering**: Updated `src/App.tsx` hero `<img>` intrinsic dimensions (`width="439" height="585"`) and changed fixed height cropping to `w-full h-auto object-cover object-center block` so neither person on the sides is clipped across viewports.
