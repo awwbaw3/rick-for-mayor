@@ -1,5 +1,12 @@
 # Implementation History
 
+## 2026-10-26 — v1.3.0 "Site Under Construction" Password-Protected Gate for Campaign Embargo
+- **Privacy & Embargo Architecture**: Implemented a locked public holding page displaying solely "Site Under Construction" and a minimal password prompt. No campaign lore, names, images, or hints are exposed to unauthorized visitors.
+- **Metadata Sanitization**: Neutralized `index.html` title and OpenGraph metadata to "Site Under Construction" and removed eager portrait preloading so search crawlers and link previews reveal zero campaign disclosures.
+- **Code Splitting & Asset Isolation**: Refactored the full campaign experience into `src/CampaignPage.tsx` loaded via `React.lazy()`. The campaign JavaScript bundle, photos, and platforms are only transferred over the wire upon successful authentication.
+- **Cryptographic Hash Verification**: Validates passcodes using Web Crypto API SHA-256 digests (`crowking2026`, `marshall2026`) preventing plaintext password discovery in client-side sources, with support for URL bypass (`?pass=...`) and persistent session storage.
+- **Verification**: Verified using Chrome DevTools MCP both the locked state (clean "Site Under Construction" heading, focused password input, error handling) and the unlocked state (`document.title` dynamic synchronization, full campaign UI rendering, and floating Re-lock toggle).
+
 ## 2026-10-25 — v1.2.0 Cloudflare Edge Custom Domain Deployment (`https://voterick4mayor.com`)
 - **Cloudflare Workers Static Assets & Custom Domains**: Configured `wrangler.jsonc` (`account_id: 0f40130f3a5b17109c6ef2c69bc623a9`) with `assets.directory = "./dist"` and `custom_domain = true` routes for `voterick4mayor.com` and `www.voterick4mayor.com`.
 - **Verification**: Deployed Version ID `eff8a971-c2eb-4f11-bf5e-a5d9bf27e51a` and verified `200 OK` HTTPS responses across `https://voterick4mayor.com`, `https://www.voterick4mayor.com`, and `https://voterick4mayor.com/rick-crow-king.jpg`.
