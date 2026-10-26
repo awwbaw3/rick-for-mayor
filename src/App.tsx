@@ -1,19 +1,12 @@
 import { useState, useEffect, lazy, Suspense } from 'react'
-import UnderConstructionGate, { computeSha256 } from './UnderConstructionGate'
+import UnderConstructionGate from './UnderConstructionGate'
+import { isAuthorizedPasscode } from './siteAccessConfig'
 import { Lock } from 'lucide-react'
 
 // Lazy load campaign content only after authentication to ensure zero campaign assets leak to unauthorized visitors
 const CampaignPage = lazy(() => import('./CampaignPage'))
 
 const STORAGE_KEY = 'site_access_authorized'
-
-const AUTHORIZED_HASHES = new Set<string>([
-  '4db24f040f42b4d246deb4393f0df2e288d28c8be141842e4c392f5dd82f5e84', // crowking2026
-  'ccf2b2b55de35831e9364719d1596808c05c175e99136cd6c7337b93c4293197', // marshall2026
-  'c633819f19c35dbd352966292eefbbdd3cd79b4628d708d75ae0e2d6815865bf', // rick2026
-  'eb38c5d6339b0070d784d8d7aea5f708e664a4bea853e4c72013d775dfdad381', // marshall2028
-  '07a6c9b976f1a69bc6f022933c5abb5b3d177a5c95b9913639e47a56ba42f22c', // albaugh2026
-])
 
 export default function App() {
   const [isAuthorized, setIsAuthorized] = useState<boolean>(false)
@@ -27,9 +20,8 @@ export default function App() {
         const urlPass = params.get('pass') || params.get('access') || params.get('key')
 
         if (urlPass) {
-          const hash = await computeSha256(urlPass)
-          const envPass = (import.meta.env.VITE_CAMPAIGN_ACCESS_CODE || '').trim().toLowerCase()
-          if (AUTHORIZED_HASHES.has(hash) || (envPass && urlPass.trim().toLowerCase() === envPass)) {
+          const authorized = await isAuthorizedPasscode(urlPass)
+          if (authorized) {
             localStorage.setItem(STORAGE_KEY, 'true')
             setIsAuthorized(true)
 

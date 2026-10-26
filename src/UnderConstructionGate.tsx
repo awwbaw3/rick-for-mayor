@@ -1,27 +1,6 @@
 import { useState, type FormEvent } from 'react'
 import { Lock, ArrowRight, ShieldAlert } from 'lucide-react'
-
-// SHA-256 hashes of accepted passcodes (passwords never exposed in client bundle)
-// Supported defaults:
-// - "crowking2026": 4db24f040f42b4d246deb4393f0df2e288d28c8be141842e4c392f5dd82f5e84
-// - "marshall2026": ccf2b2b55de35831e9364719d1596808c05c175e99136cd6c7337b93c4293197
-// - "rick2026": c633819f19c35dbd352966292eefbbdd3cd79b4628d708d75ae0e2d6815865bf
-// - "marshall2028": eb38c5d6339b0070d784d8d7aea5f708e664a4bea853e4c72013d775dfdad381
-const AUTHORIZED_HASHES = new Set<string>([
-  '4db24f040f42b4d246deb4393f0df2e288d28c8be141842e4c392f5dd82f5e84',
-  'ccf2b2b55de35831e9364719d1596808c05c175e99136cd6c7337b93c4293197',
-  'c633819f19c35dbd352966292eefbbdd3cd79b4628d708d75ae0e2d6815865bf',
-  'eb38c5d6339b0070d784d8d7aea5f708e664a4bea853e4c72013d775dfdad381',
-  '07a6c9b976f1a69bc6f022933c5abb5b3d177a5c95b9913639e47a56ba42f22c',
-])
-
-export async function computeSha256(text: string): Promise<string> {
-  const enc = new TextEncoder().encode(text.trim().toLowerCase())
-  const buf = await crypto.subtle.digest('SHA-256', enc)
-  return Array.from(new Uint8Array(buf))
-    .map((b) => b.toString(16).padStart(2, '0'))
-    .join('')
-}
+import { isAuthorizedPasscode } from './siteAccessConfig'
 
 interface UnderConstructionGateProps {
   onAuthorized: () => void
@@ -41,13 +20,8 @@ export default function UnderConstructionGate({ onAuthorized }: UnderConstructio
     setIsVerifying(true)
 
     try {
-      const hash = await computeSha256(password)
-
-      // Check against optional env variable or authorized hash set
-      const envPasscode = (import.meta.env.VITE_CAMPAIGN_ACCESS_CODE || '').trim().toLowerCase()
-      const isEnvMatch = envPasscode && password.trim().toLowerCase() === envPasscode
-
-      if (AUTHORIZED_HASHES.has(hash) || isEnvMatch) {
+      const authorized = await isAuthorizedPasscode(password)
+      if (authorized) {
         onAuthorized()
       } else {
         setHasError(true)
