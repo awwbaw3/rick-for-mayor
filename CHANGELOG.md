@@ -2,6 +2,14 @@
 
 All notable changes to the **Rick Albaugh for Mayor (`rick-for-mayor`)** project will be documented in this file.
 
+## [1.3.0] - 2026-10-26
+### Added
+- **Site Under Construction Password Gate**: Introduced a clean, privacy-first holding screen displaying solely "Site Under Construction" and a password prompt.
+- **Strict Information Embargo**: Eliminated all public campaign text, imagery, and metadata disclosures from the initial load. Neutralized `index.html` title and OpenGraph tags to "Site Under Construction".
+- **Dynamic Lazy Loading**: Isolated full campaign content (`CampaignPage.tsx`) into a separate chunk loaded exclusively upon successful passcode authentication, ensuring zero campaign assets or scripts are downloaded by unauthorized visitors or crawlers.
+- **Zero-Knowledge SHA-256 Passcode Verification**: Authenticates inputs using browser-native Web Crypto API SHA-256 hashes (`crowking2026`, `marshall2026`) so plaintext passwords are never exposed in JavaScript bundles.
+- **Session Persistence & Re-Lock Control**: Remembers authorization in browser storage and provides a floating "Lock Site" button for authorized testers to re-engage the barrier instantly.
+
 ## [1.2.0] - 2026-10-25
 ### Added
 - Deployed production static assets and Cloudflare Edge custom domain triggers (`voterick4mayor.com` and `www.voterick4mayor.com`) via `wrangler.jsonc` (`account_id: 0f40130f3a5b17109c6ef2c69bc623a9`, Version ID `eff8a971-c2eb-4f11-bf5e-a5d9bf27e51a`).
