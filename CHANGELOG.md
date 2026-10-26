@@ -2,6 +2,11 @@
 
 All notable changes to the **Rick Albaugh for Mayor (`rick-for-mayor`)** project will be documented in this file.
 
+## [1.3.1] - 2026-10-26
+### Security
+- **Strict Hash-Only Authentication**: Purged all plaintext passwords and default passcode arrays from the codebase and configuration files.
+- **Cryptographic Gate Hardening**: Authenticates solely against the SHA-256 digest (`5215ba28a5da6f3f28b7df0ae466d24facbe075aa6f681149791d22c44961b8b`), ensuring zero credentials can be reversed, scraped, or compromised from the client bundle.
+
 ## [1.3.0] - 2026-10-26
 ### Added
 - **Site Under Construction Password Gate**: Introduced a clean, privacy-first holding screen displaying solely "Site Under Construction" and a password prompt.

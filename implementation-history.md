@@ -1,5 +1,10 @@
 # Implementation History
 
+## 2026-10-26 — v1.3.1 Cryptographic Hash Hardening & Plaintext Elimination
+- **Plaintext Purge**: Completely removed all plaintext passwords and default passcode arrays (`crowking2026`, `marshall2026`, etc.) from all configuration and source files.
+- **Single SHA-256 Digest**: Hardened `src/siteAccessConfig.ts` to authenticate exclusively against the exact one-way cryptographic SHA-256 digest (`5215ba28a5da6f3f28b7df0ae466d24facbe075aa6f681149791d22c44961b8b`), guaranteeing that the access passcode cannot be reverse-engineered or discovered by examining repository code or compiled client bundles.
+- **Verification**: Verified using Node.js crypto and browser Web Crypto digests that the exact secret passcode unlocks the site cleanly while all previous default passcodes are rejected.
+
 ## 2026-10-26 — v1.3.0 "Site Under Construction" Password-Protected Gate for Campaign Embargo
 - **Privacy & Embargo Architecture**: Implemented a locked public holding page displaying solely "Site Under Construction" and a minimal password prompt. No campaign lore, names, images, or hints are exposed to unauthorized visitors.
 - **Metadata Sanitization**: Neutralized `index.html` title and OpenGraph metadata to "Site Under Construction" and removed eager portrait preloading so search crawlers and link previews reveal zero campaign disclosures.

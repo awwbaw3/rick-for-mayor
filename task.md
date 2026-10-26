@@ -9,3 +9,4 @@
 - [x] Bind `voterick4mayor.com` + `www.voterick4mayor.com` to Netlify site, provision Netlify DNS Zone (`6ade5b8a03ae311b3f1dc50a`), and publish `v1.1.0` production build.
 - [x] Deploy `rick-for-mayor` to Cloudflare (`0f40130f3a5b17109c6ef2c69bc623a9`) and bind `https://voterick4mayor.com` and `https://www.voterick4mayor.com` (`v1.2.0`).
 - [x] Implement privacy-first "Site Under Construction" password gate with zero public campaign disclosures, metadata sanitization, and SHA-256 protected lazy loading (`v1.3.0`).
+- [x] Eliminate all plaintext passwords from codebase and enforce single cryptographic SHA-256 hash authentication (`v1.3.1`).

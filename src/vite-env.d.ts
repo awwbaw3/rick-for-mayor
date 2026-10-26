@@ -1,8 +1,7 @@
 /// <reference types="vite/client" />
 
 interface ImportMetaEnv {
-  readonly VITE_SITE_PASSWORD?: string
-  readonly VITE_CAMPAIGN_ACCESS_CODE?: string
+  readonly VITE_SITE_PASSWORD_HASH?: string
 }
 
 interface ImportMeta {
